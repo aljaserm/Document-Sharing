@@ -1,0 +1,33 @@
+bin/
+obj/
+
+# User-specific files
+*.user
+*.rsuser
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# NuGet packages
+*.nupkg
+*.snupkg
+*.nuspec
+.nuget/
+
+# Environment and settings files
+.env
+local.settings.json
+
+# Visual Studio specific files
+.vscode/
+.vscode/*
+
+# Rider specific files
+.idea/
+.idea/*
+
+# Resharper specific files
+_ReSharper.Caches/

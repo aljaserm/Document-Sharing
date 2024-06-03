@@ -1,0 +1,34 @@
+@Web_HostAddress = http://localhost:5161
+
+GET {{Web_HostAddress}}/api/documents
+Accept: application/json
+
+POST {{Web_HostAddress}}/api/documents/upload
+Content-Type: multipart/form-data
+Content-Disposition: form-data; name="file"; filename="test.pdf"
+Content-Type: application/pdf
+Content-Transfer-Encoding: binary
+< ./test.pdf
+
+POST {{Web_HostAddress}}/api/documents/upload/multiple
+Content-Type: multipart/form-data
+Content-Disposition: form-data; name="files"; filename="test1.pdf"
+Content-Type: application/pdf
+Content-Transfer-Encoding: binary
+< ./test1.pdf
+
+Content-Disposition: form-data; name="files"; filename="test2.pdf"
+Content-Type: application/pdf
+Content-Transfer-Encoding: binary
+< ./test2.pdf
+
+GET {{Web_HostAddress}}/api/documents/download/1
+Accept: application/json
+
+POST {{Web_HostAddress}}/api/documents/share
+Content-Type: application/json
+
+{
+  "documentId": 1,
+  "expiration": "01:00:00"
+}

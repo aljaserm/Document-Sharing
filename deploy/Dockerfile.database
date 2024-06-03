@@ -1,0 +1,14 @@
+# Use a base image with sqlite3
+FROM alpine:latest
+
+# Install sqlite3
+RUN apk add --no-cache sqlite
+
+# Set the working directory in the container
+WORKDIR /data
+
+# Copy the SQLite database file from the backend directory
+COPY ../backend/db.sqlite3 /data
+
+# Keep the container running
+CMD ["tail", "-f", "/dev/null"]
